@@ -16,4 +16,6 @@ for i in range(count):
         res = api.wall.delete(post_id=post[1]['id'], version=5.80)
     except:
         time.sleep(1)
+        post = api.wall.get(version=5.80, count=1)
+        res = api.wall.delete(post_id=post[1]['id'], version=5.80)
 print("Done")
